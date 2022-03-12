@@ -1,1 +1,20 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
+{% load static %}
+
+{% block body %}
+  <div class="container">
+    <div class="detel container">
+        <h1 class=" animate__animated animate__bounce">Hi, <span>I'm Haddad</span></h1>
+
+        <p>Computer Science student with passion in software engineering and
+            <br> building community with tech solution </p>
+        <a href="https://drive.google.com/file/d/1uc5cTy91i_17IG_Y8XyCOwDD5PoB3ra_/view?usp=sharing">Resume</a>
+    </div>
+    <div class="images">
+        <img src={%static 'img/graph.png' %} class="shape">
+        <img src={%static 'img/haddad.png' %} class="hdd">
+    </div>
+
+  </div>
+  </div>
+{% endblock body %}
