@@ -1,8 +1,5 @@
 # haddadblog
 
-[![Test and Deploy][actions-badge]][commits-gh]
-[![coverage report][coverage-badge]][commits-gl]
-
 *haddadblog* merupakan personal blogging yang berisi profil dan artikel-artikel. Pengguna dapat melakukan register dan login untuk berinteraksi secara langsung di tiap artikel dengan memberikan komentar. Project dapat diakses melalui link berikut: https://haddadblog.herokuapp.com
 
 ## Daftar isi
@@ -95,7 +92,7 @@ Setelah menjalankan project Django, anda memerlukan `admin-privelege` untuk bisa
 ## Kontribusi
 
 Saya terbuka terhadap hal-hal yang dapat diperbaiki, apabila ingin berkontribusi pada project saya, silakan buat *issue* atau kirim
-*pull request* ke repositori untuk project  ini di [**GitHub**][repo-gh].
+*pull request* ke repositori untuk project  ini di [**GitHub**](https://github.com/haddad9/haddadblog).
 
 
 ## Lisensi
