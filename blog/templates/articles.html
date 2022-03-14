@@ -1,48 +1,44 @@
-{% extends 'base.html' %}
-{% load static %}   
-{% block meta %}
-<link rel="stylesheet" href="{% static 'css/forum_list.css' %}">
-{% endblock meta %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block meta %}
+<link rel="stylesheet" href="{% static 'css/artikel.css' %}"> {% endblock meta %} {% block content %}
 
 <div class="container-fluid" id="myBody">
-  <div class="d-flex justify-content-between" id="top">
-    <p class="h2">Forum Diskusi</p>
-    {% if user.is_authenticated %}
-      <button type="button" class="btn btn-success" onclick="create_forum()" id = "create_button">Create Forum</button>
-    {% endif %}
-  </div>
-  
-  <div class="vstack gap-2" id="list">
-   
-    <div class="card" id = '-1'>
-      <div class="card-body">
-        <p class="h4">Title</p>
-        <div class="user">
-          <div class="d-flex flex-column">
-            <div class="container">
-              <div class = "image_user">
-                <img src="https://res.cloudinary.com/da66vxlpb/image/upload/v1/images/media/profiles/default-user_pfzkxt" class="rounded float-start" alt="">
-              </div>
-              <p class="h6 text-muted">nama user - tanggal</p>
-            </div>
-            <div class="container">
-              <p class="deskripsi">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore cum officiis dolorum, dicta doloremque explicabo obcaecati veniam quo nesciunt sit expedita ad, nisi commodi, maiores deleniti sequi reiciendis eius rerum.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="d-flex justify-content-between" id="top">
+        <p class="h2">Artikel </p>
+        {% if user.is_superuser %}
+        <button type="button" class="btn btn-success" onclick="create_forum()" id="create_button">Create Artikel</button> {% endif %}
     </div>
-    
-  </div>
-</div>
-{% endblock content %}
 
-{% block js %}
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-<script src="{% static 'js/forum_list.js' %}"></script>
+    <div class="vstack gap-2" id="list">
+        {%if articles %}
+        {%for a in articles%}
+          
+        <div class="card" id='-1' onclick="reply_click({{a.id}})">
+            <div class="card-body">
+                <p class="h4"> {{a.title}} </p>
+                <div class="user">
+                    <div class="d-flex flex-column">
+                        <div class="container">
+
+                            <p class="h6 text-muted">{{a.username}} - {{a.created_at}}  </p>
+                        </div>
+                        <div class="container">
+                            <p class="deskripsi">{{a.message|truncatechars:30}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+        {% endfor %}
+      {% endif %}
+       
+
+
+        
+
+    </div>
+</div>
+{% endblock content %} {% block js %}
+
+<script src="{% static 'js/artikel.js' %}"></script>
 {% endblock js %}
