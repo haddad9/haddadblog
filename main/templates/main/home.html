@@ -1,8 +1,11 @@
-{% include 'base.html' %}
+{% extends 'base.html' %} 
 {% load static %}
+{% block meta %}
 
-{% block body %}
-  <div class="container">
+<link rel="stylesheet" href={% static 'css/style.css' %}>
+{% endblock meta %}
+{% block content %}
+<div class="container">
     <div class="detel container">
         <h1 class=" animate__animated animate__bounce">Hi, <span>I'm Haddad</span></h1>
 
@@ -15,6 +18,10 @@
         <img src={%static 'img/haddad.png' %} class="hdd">
     </div>
 
-  </div>
-  </div>
-{% endblock body %}
+
+
+</div>
+
+
+</div>
+{% endblock content %}
