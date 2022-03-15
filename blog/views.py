@@ -15,6 +15,7 @@ def index(request):
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     articles = Artikel.objects.all().values()
     response = {'articles': articles}
+    print(response)
     return render(request, 'articles.html', response)
 
 @login_required(login_url="register/login")

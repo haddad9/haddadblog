@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'main',
     'blog',
     'register',
+    'comment',
     
 ]
 
