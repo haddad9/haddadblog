@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Artikel(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField()
     message = models.TextField()
     created_at = models.CharField(max_length=50)
     username = models.TextField(null=True)
