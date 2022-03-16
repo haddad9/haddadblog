@@ -36,7 +36,7 @@ def index(request, id):
             add_comment = form.save(commit=False)
             add_comment.forum = Artikel.objects.get(pk=id)
 
-            add_comment.comment_creator =  User.objects.get(pk = id)
+            add_comment.comment_creator =  request.user
             add_comment.forum_creator =  Artikel.objects.get(pk=id)
             add_comment.forum_creator_username = add_comment.forum_creator.username
             add_comment.id_forum = add_comment.forum_creator.pk
