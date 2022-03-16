@@ -42,9 +42,16 @@
                     <p class="h4">{{comment.message}}</p>
                     <div class="user">
                         <div class="image_user">
+                            
                             <img src="https://res.cloudinary.com/da66vxlpb/image/upload/v1/images/media/profiles/default-user_pfzkxt" class="rounded float-start" alt="">
                         </div>
-                        <p class="h6 text-muted">{{comment.comment_creator_username}} - {{comment.created_at }}</p>
+                        <p class="h6 text-muted">{{comment.comment_creator_username}} - {{comment.created_at }} </p>
+                        
+                        {% if user.username == comment.id_user %}
+                        <button class= "btn btn-primary" onclick="edit({{comment.id}})">edit </button>
+                        <button class= "btn btn-danger " onclick="_delete({{comment.id}})"> delete </button>
+                        {% endif %}
+                        
 
                     </div>
                 </div>
@@ -106,12 +113,13 @@
 
 
 
-{% endblock content %} {% block js %} {% if not user.is_authenticated %}
+{% endblock content %} {% block js %} 
+
+{% if not user.is_authenticated %}
 <script src="{% static 'js/comment_form.js' %}"></script>
 {% endif %}
 
-<script src="{% static 'js/comment_list.js' %}"></script>
-
-
+<script src="{% static 'js/edit_comment.js' %}"></script>
+<script src="{% static 'js/delete_comment.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 {% endblock js %}

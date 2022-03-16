@@ -1,6 +1,7 @@
 # haddadblog
+Repository: https://github.com/haddad9/haddadblog
 
-*haddadblog* merupakan personal blogging yang berisi profil dan artikel-artikel. Pengguna dapat melakukan register dan login untuk berinteraksi secara langsung di tiap artikel dengan memberikan komentar. Project dapat diakses melalui link berikut: https://haddadblog.herokuapp.com
+*haddadblog* merupakan personal blogging yang berisi profil dan artikel-artikel. Pengguna dapat melakukan register dan login untuk berinteraksi secara langsung di tiap artikel dengan memberikan komentar. Project dapat diakses melalui link berikut: https://haddadblog.herokuapp.com 
 
 ## Daftar isi
 

@@ -40,6 +40,7 @@ def index(request, id):
             add_comment.forum_creator =  Artikel.objects.get(pk=id)
             add_comment.forum_creator_username = add_comment.forum_creator.username
             add_comment.id_forum = add_comment.forum_creator.pk
+            add_comment.id_user = request.user.username
             add_comment.comment_creator_username = add_comment.comment_creator.username
                       
             
@@ -66,4 +67,19 @@ def index(request, id):
     response['comments'] = {'comments': comments}
     print(response)
     return render(request,  "comment_list.html", response)
+
+
+def delete(request,id):
+    
+    record = Comment.objects.get(id=id)
+    record.delete()
+    return render(request,  "articles.html")
+
+
+def edit(request,id):
+    if request.method =='POST': 
+        record = Comment.objects.get(id=id)
+        record.delete()
+        return render(request,  "articles.html")
+    return render(request,  "articles.html")
 
