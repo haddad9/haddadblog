@@ -48,6 +48,7 @@
                         <p class="h6 text-muted">{{comment.comment_creator_username}} - {{comment.created_at }} </p>
                         
                         {% if user.username == comment.id_user %}
+                     
                         <button class= "btn btn-primary" onclick="edit({{comment.id}})">edit </button>
                         <button class= "btn btn-danger " onclick="_delete({{comment.id}})"> delete </button>
                         {% endif %}

@@ -1,5 +1,6 @@
 
 from datetime import datetime
+from socket import IPV6_DONTFRAG
 from django.http import response
 from django.shortcuts import render,redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -77,9 +78,16 @@ def delete(request,id):
 
 
 def edit(request,id):
+    response={}
+    
     if request.method =='POST': 
-        record = Comment.objects.get(id=id)
+        record = Comment.objects.get(pk=id)
         record.delete()
-        return render(request,  "articles.html")
-    return render(request,  "articles.html")
+        index(request,id)
+    
+    form = CommentForm( )
+    comment = Comment.objects.get(pk=id)
+    response["form"] = form
+    response["comment"] = comment
+    return render(request,  "comment_edit.html",response)
 

@@ -3,12 +3,12 @@ from .views import *
 from comment.views import index as index_comment
 
 
-app_name='comment'
+app_name='edit'
 
 urlpatterns = [
     
    
-    path('edit/<int:id>', edit, name='edit'),
-    path('delete/<int:id>', delete, name='edit'),
+    path('<int:id>', edit.as_view(), name='edit'),
+
     
 ]

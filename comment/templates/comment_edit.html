@@ -10,17 +10,25 @@
 
 <div class="d-flex justify-content-end">
     <div class="container-fluid">
-        <p class="h2" style="padding-top: 40px; text-align: center;">Edit Comment</p> 
+        <p class="h2" style="padding-top: 40px; text-align: center;">Edit Komentar</p> 
     </div>
-    <button type="button" class="btn btn-danger" style="margin-top: 50px;" onclick="back_to_forum()">back</button>
+    <button type="button" class="btn btn-danger" style="margin-top: 50px;" onclick="back_to_forum()">Kembali</button>
 </div>
+
+
+    <div class="mb-4">
+        <label for="message_input" class="form-label">Komentar lama anda:</label>
+        </br>
+        {{ comment.message}}
+    </div>
 
 <form action="" method="POST"> 
     {% csrf_token %}
    
     <div class="mb-4">
-        <label for="message_input" class="form-label">Message</label>
-        {{ form.message }}
+        <label for="message_input" class="form-label">Komentar baru:</label>
+    </br>
+        {{ form.message}}
     </div>
     
     <input class="btn btn-success" style="margin-top: 10px" type="submit" value="Add">
@@ -31,7 +39,7 @@
 {% block js %}
 <script>
     function back_to_forum(){
-        window.location.href = '../';
+        window.location.href = '../../';
     }
 </script>
 {% endblock js %}
